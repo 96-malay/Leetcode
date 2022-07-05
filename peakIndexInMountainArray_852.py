@@ -11,9 +11,16 @@ return any i such that arr[0] < arr[1] < ... arr[i - 1] < arr[i] > arr[i + 1] > 
 
 def peakIndexInMountainArray(arr):
 
-    for i in range(1, len(arr)-1):
-        if arr[i] > arr[i+1]:  # Since the array is in increasing order, we only need to check for the point where values start decreasing
-            return i
+    # Binary Search
+    l, r = 0, len(arr)-1
+    while l <= r:
+        if l == r:
+            return l
+        mid = (l+r) // 2
+        if arr[mid] > arr[mid+1]:
+            r = mid
+        else:
+            l = mid+1
 
 
 print(peakIndexInMountainArray([1, 2, 3, 2, 1]))
