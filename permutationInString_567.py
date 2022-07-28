@@ -1,4 +1,6 @@
 class Solution:
+    #     Time: O(n) - linear for window sliding and counter
+    #     Space: O(1) - conctant for dictionary with the maximum 26 pairs (English alphabet)
     def checkInclusion(self, s1: str, s2: str) -> bool:
         #       get the freq of each letter in s1 in hashmap
         data = Counter(s1)
