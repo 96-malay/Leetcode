@@ -19,6 +19,7 @@ def exist(board, word):
                 visit.add((row, col))
                 if check(row, col, counter):
                     return True
+                visit.remove((row, col))
 
     for i in range(len(board)):
         for j in range(len(board[i])):
@@ -34,3 +35,7 @@ def exist(board, word):
 # Bug
 print(exist([["A", "B", "C", "E"], ["S", "F", "E", "S"], ["A", "D", "E", "E"]],
             "ABCESEEEFS"))
+
+# TLE
+# [["A","A","A","A","A","A"],["A","A","A","A","A","A"],["A","A","A","A","A","A"],["A","A","A","A","A","A"],["A","A","A","A","A","A"],["A","A","A","A","A","A"]]
+# "AAAAAAAAAAAABAA"
